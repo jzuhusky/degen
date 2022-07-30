@@ -1,0 +1,81 @@
+# Py.test gen files
+**/__pycache__/
+
+games_report.txt
+
+# Files named "raw_data"
+**/raw_data/
+
+**.venv/**
+
+**.txt
+
+*.html
+
+*.pdf
+
+**/static/
+
+# This folder
+./nginx/static/
+
+# All static generated files
+./nginx/static/**
+
+# Files named "secrets"
+**/secrets/
+
+# Python Generated Files
+*.py[cod]
+
+# Apple garbage
+.DS_Store
+
+# Docker
+Dockerfile.tmp
+
+# Testing crap
+.inenv
+.env
+.coverage
+.cache/
+
+# Don't check in venvs
+**/venv/
+
+# No dbs
+*.db
+*.sqlite3
+*.redis
+
+# PyCharm Generated Files
+.idea
+.idea/
+.idea/*
+
+# Notebooks
+*.ipynb
+
+# Any logs!
+*.log
+*.dat
+
+# Other garbage 
+*.swp
+*.swo
+
+# Node 
+**/node_modules/**
+**/build/**
+.ufo/current
+.ufo/data
+.ufo/log
+.ufo/output
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+*.csv
+*.csv.gz
