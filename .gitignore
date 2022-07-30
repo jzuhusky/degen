@@ -3,6 +3,8 @@
 
 games_report.txt
 
+*.tox/
+
 # Files named "raw_data"
 **/raw_data/
 
