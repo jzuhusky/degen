@@ -2,7 +2,7 @@
 
 *pronounced "dee-gen"*
 
-### A clean approach to programming with betting odds
+### Programming with betting odds, made simple
 
 Easy to initialize `Odds` objects.
 ```python
@@ -53,9 +53,6 @@ print(juice.value)
 # You can ask all odds objects if they're "juiced"
 print(juice.is_juiced)
 # >>> True
-
-
-
 ```
 
 
