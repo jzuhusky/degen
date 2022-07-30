@@ -1,3 +1,4 @@
+from decimal import Decimal
 import unittest
 
 import pytest
@@ -57,6 +58,10 @@ class TestMathTools(unittest.TestCase):
 
         self.assertTrue(juiced_odds.is_juiced)
         self.assertEqual(type(juiced_odds), ImpliedProbability)
+
+        decimal_juiced_odds = juiced_odds.to_decimal_odds()
+        self.assertLess(decimal_juiced_odds.value, Decimal(1.0))
+        self.assertTrue(decimal_juiced_odds.is_juiced)
 
         odds1 = AmericanOdds(110)
         odds2 = AmericanOdds(110)
