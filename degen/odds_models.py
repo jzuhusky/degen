@@ -50,7 +50,7 @@ class Odds(BaseModel, abc.ABC):
         if isinstance(self, AmericanOdds):
             return new_odds.to_american_odds()
         elif isinstance(self, DecimalOdds):
-            return new_odds.to_american_odds()
+            return new_odds.to_decimal_odds()
         elif isinstance(self, ImpliedProbability):
             return new_odds
         raise TypeError()
@@ -63,7 +63,7 @@ class Odds(BaseModel, abc.ABC):
         if isinstance(self, AmericanOdds):
             return new_odds.to_american_odds()
         elif isinstance(self, DecimalOdds):
-            return new_odds.to_american_odds()
+            return new_odds.to_decimal_odds()
         elif isinstance(self, ImpliedProbability):
             return new_odds
         raise TypeError()
