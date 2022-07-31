@@ -4,9 +4,11 @@ from setuptools import setup
 this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
+version = (this_directory / "__version__.txt").read_text()
+
 setup(
     name="degen",
-    version="0.1.1",
+    version=version,
     description="Programming with betting odds, made simple",
     long_description=long_description,
     long_description_content_type="text/markdown",
