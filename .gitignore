@@ -5,6 +5,8 @@ games_report.txt
 
 *.tox/
 
+MANIFEST
+
 dist/**
 *.egg-info/
 
