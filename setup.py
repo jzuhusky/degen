@@ -19,4 +19,5 @@ setup(
     url="https://github.com/jzuhusky/degen",
     install_requires=["pydantic>=1.9.1"],
     license="MIT",
+    packages=["degen"],
 )
