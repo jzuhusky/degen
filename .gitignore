@@ -5,6 +5,8 @@ games_report.txt
 
 *.tox/
 
+codecov
+
 # Files named "raw_data"
 **/raw_data/
 
@@ -13,6 +15,8 @@ games_report.txt
 *.html
 
 *.pdf
+
+*.xml
 
 **/static/
 
