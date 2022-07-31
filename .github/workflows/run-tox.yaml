@@ -32,5 +32,6 @@ jobs:
           tox
 
       - uses: codecov/codecov-action@v3
+        name: Codecov
         with:
           files: ./coverage.xml
