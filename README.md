@@ -1,9 +1,19 @@
 # Degen 
 
+### Programming with betting odds, made simple
+
 *pronounced "dee-gen"* as in [Degenerate Gambler](https://www.urbandictionary.com/define.php?term=Degenerate%20Gambler)
 
 ![alt text](https://github.com/jzuhusky/degen/blob/master/coverage.svg?raw=true)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+
+## Table of Contents
+
+1. [Installation](#installation)
+2. [Getting Started](#getting-started)
+3. [Examples](#examples)
+4. [Developing / Contributing](#contributing--developing)
+
 
 ### Installation
 
@@ -11,9 +21,8 @@
 pip install degen
 ```
 
-## Programming with betting odds, made simple
+## Getting Started
 
-Easy to initialize `Odds` objects.
 ```python
 from degen import AmericanOdds
 
@@ -22,20 +31,38 @@ print(odds.value)
 # >>> -110
 ```
 
-Easily convert to and from each type of odds. `AmericanOdds` `DecimalOdds` and `ImpliedProbability` are all `Odds` types, and support `.to_american_odds()` `.to_decimal_odds()` and `.to_implied_probability()` methods for easily switching between odds types. 
-```python
-odds = AmericanOdds(-110)
+### Easy conversion between odds types
 
-decimal_odds: DecimalOdds = odds.to_decimal_odds()
+There are 3 main `Odds` types provided by degen:
+* `AmericanOdds` 
+* `DecimalOdds`
+* `ImpliedProbability` 
+
+They all support the methods:
+* `.to_american_odds()`
+* `.to_decimal_odds()`
+* `.to_implied_probability()`
+
+*No more formulas*
+ 
+## Examples
+ 
+Example 0: simple odds objects
+```python
+from degen import AmericanOdds, DecimalOdds, ImpliedProbability
+
+american_odds = AmericanOdds(-110)
+
+decimal_odds: DecimalOdds = american_odds.to_decimal_odds()
 print(decimal_odds.value)
 # >>> 1.909090909090909090909090909
 
-implied_probability: ImpliedProbability = odds.to_implied_probability()
+implied_probability: ImpliedProbability = american_odds.to_implied_probability()
 print(implied_probability.value)
 # >>> 0.5238095238095238095238095238
 ```
 
-Easily compute Parlay odds
+Example 1: Bitwise operators for simple odds computation, parlay using bitwise-and operator
 ```python
 odds1 = AmericanOdds(-110)
 odds2 = AmericanOdds(-110)
@@ -45,7 +72,7 @@ print(parlay_odds.value)
 # >>> 264.4628099173553719008264463
 ```
 
-Easily compute Juice
+Example 2: Computing *juice* or *the vig* using the bitwise-or operator
 ```python
 
 juice = AmericanOdds(-110) | AmericanOdds(-110)
