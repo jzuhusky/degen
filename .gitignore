@@ -5,6 +5,8 @@ games_report.txt
 
 *.tox/
 
+dist/**
+
 codecov
 
 # Files named "raw_data"

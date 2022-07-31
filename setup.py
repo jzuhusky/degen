@@ -1,7 +1,6 @@
-import os
-from distutils.core import setup
+from setuptools import setup
 
-with open('requirements.txt') as f:
+with open("requirements.txt") as f:
     required_pkgs = f.read().splitlines()
 
 setup(
@@ -14,4 +13,5 @@ setup(
     maintainer_email="jzuhusky@gmail.com",
     url="https://github.com/jzuhusky/degen",
     install_requires=required_pkgs,
+    license="MIT",
 )
