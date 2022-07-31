@@ -68,9 +68,61 @@ class TestMathTools(unittest.TestCase):
 
         self.assertFalse((odds1 & odds2).is_juiced)
 
-    def test_ip_to_ameican_fail(self):
+    def test_ip_to_american_fail(self):
 
         juiced_odds = ImpliedProbability(1.1)
 
         with pytest.raises(ValueError):
             _ = juiced_odds.to_american_odds()
+
+    def test_implied_prob_model(self):
+
+        ip = ImpliedProbability(0.25)
+        american = ip.to_american_odds()
+        self.assertEqual(american.value, 300)
+
+        ip = ImpliedProbability(0.75)
+        american = ip.to_american_odds()
+        self.assertEqual(american.value, -300)
+
+    def test_decimal_model(self):
+        odds = DecimalOdds(Decimal(3.0))
+        american = odds.to_american_odds()
+        self.assertEqual(american.value, Decimal(200))
+
+        american = AmericanOdds(Decimal(-200))
+        dec = american.to_decimal_odds()
+        self.assertEqual(dec.value, Decimal(1.5))
+
+        dec = DecimalOdds(Decimal(2.0))
+        ip = dec.to_implied_probability()
+        self.assertEqual(ip.value, Decimal(0.5))
+
+    def test_bitwise_ops(self):
+        odds = AmericanOdds(100) & DecimalOdds(2.0)
+        self.assertEqual(type(odds), AmericanOdds)
+        self.assertEqual(odds.value, Decimal(300))
+
+        odds = DecimalOdds(2.0) & AmericanOdds(100)
+        self.assertEqual(type(odds), DecimalOdds)
+        self.assertEqual(odds.value, Decimal(4.0))
+
+        odds = ImpliedProbability(0.25) | AmericanOdds(300)
+        self.assertEqual(type(odds), ImpliedProbability)
+        self.assertEqual(odds.value, Decimal(0.5))
+
+        odds = AmericanOdds(300) | ImpliedProbability(0.25)
+        self.assertEqual(type(odds), AmericanOdds)
+        self.assertEqual(odds.value, Decimal(100))
+
+        odds = DecimalOdds(2.0) & ImpliedProbability(0.5)
+        self.assertEqual(type(odds), DecimalOdds)
+        self.assertEqual(odds.value, Decimal(4.0))
+
+        odds = DecimalOdds(2.5) | AmericanOdds(150)
+        self.assertEqual(type(odds), DecimalOdds)
+        self.assertEqual(odds.value, Decimal(1.25))
+
+        odds = ImpliedProbability(0.5) & ImpliedProbability(0.5)
+        self.assertEqual(type(odds), ImpliedProbability)
+        self.assertEqual(odds.value, Decimal(0.25))
