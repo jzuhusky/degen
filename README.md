@@ -5,7 +5,7 @@
 ![alt text](https://github.com/jzuhusky/degen/blob/master/coverage.svg?raw=true)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-### Programming with betting odds, made simple
+## Programming with betting odds, made simple
 
 Easy to initialize `Odds` objects.
 ```python
@@ -58,6 +58,25 @@ print(juice.is_juiced)
 # >>> True
 ```
 
+# Contributing / Developing
+
+Install requirements
+```bash
+pip install -r requirements-dev.txt -r requirements.txt
+```
+
+Run tox suite:
+
+* Run black code fmt checks
+* Run unittests
+* Check coverage
+* Generate coverage report & badge
+```
+tox
+```
+
+Test coverage has a floor of 95% - this will block a PR from getting approval if this threshold isn't met. 
+
 ## Todo
 
 Contributions from other developers are always welcome, here are some things that need to be implemented:
@@ -65,7 +84,6 @@ Contributions from other developers are always welcome, here are some things tha
 * Fractional Odds
 * Hong Odds 
 
-
-### Features
+### Notes
 
  * Everythign done with Decimals for numerical precision
