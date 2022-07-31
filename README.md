@@ -2,6 +2,7 @@
 
 *pronounced "dee-gen"*
 
+![alt text](https://github.com/jzuhusky/degen/blob/master/coverage.svg?raw=true)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ### Programming with betting odds, made simple
@@ -57,6 +58,12 @@ print(juice.is_juiced)
 # >>> True
 ```
 
+## Todo
+
+Contributions from other developers are always welcome, here are some things that need to be implemented:
+
+* Fractional Odds
+* Hong Odds 
 
 
 ### Features
