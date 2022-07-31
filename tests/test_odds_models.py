@@ -67,5 +67,3 @@ class TestMathTools(unittest.TestCase):
         odds2 = AmericanOdds(110)
 
         self.assertFalse((odds1 & odds2).is_juiced)
-
-
