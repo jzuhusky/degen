@@ -16,8 +16,8 @@ class Bet(object):
         return self._odds.to_american_odds()
 
     @property
-    def implied_odds(self):
-        return self._odds.to_implied_odds()
+    def implied_probability(self):
+        return self._odds.to_implied_probability()
 
     @property
     def decimal_odds(self):
