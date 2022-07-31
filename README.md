@@ -5,6 +5,12 @@
 ![alt text](https://github.com/jzuhusky/degen/blob/master/coverage.svg?raw=true)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+### Installation
+
+```bash
+pip install degen
+```
+
 ## Programming with betting odds, made simple
 
 Easy to initialize `Odds` objects.
