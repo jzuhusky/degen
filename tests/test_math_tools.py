@@ -1,6 +1,8 @@
 from decimal import Decimal
 import unittest
 
+import pytest
+
 from degen.math_tools import (
     implied_prob_to_odds_pos,
     implied_prob_to_odds_neg,
@@ -26,6 +28,12 @@ class TestMathTools(unittest.TestCase):
 
             implied_prob_computed = american_odds_to_implied_prob(american_odds)
             self.assertEqual(implied_prob_computed, implied_prob)
+
+        with pytest.raises(ValueError):
+            _ = implied_prob_to_odds_pos(Decimal(1.1))
+
+        with pytest.raises(ValueError):
+            _ = implied_prob_to_odds_neg(Decimal(-0.1))
 
     def test_implied_odds_american_odds_neg(self):
 

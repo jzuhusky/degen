@@ -68,4 +68,9 @@ class TestMathTools(unittest.TestCase):
 
         self.assertFalse((odds1 & odds2).is_juiced)
 
+    def test_ip_to_ameican_fail(self):
 
+        juiced_odds = ImpliedProbability(1.1)
+
+        with pytest.raises(ValueError):
+            _ = juiced_odds.to_american_odds()
