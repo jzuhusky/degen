@@ -6,6 +6,7 @@ games_report.txt
 *.tox/
 
 dist/**
+*.egg-info/
 
 codecov
 
