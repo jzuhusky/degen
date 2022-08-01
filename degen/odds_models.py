@@ -20,15 +20,15 @@ class Odds(BaseModel, abc.ABC):
 
     @abc.abstractmethod
     def to_american_odds(self):
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @abc.abstractmethod
     def to_implied_probability(self):
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @abc.abstractmethod
     def to_decimal_odds(self):
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @property
     def is_juiced(self):
