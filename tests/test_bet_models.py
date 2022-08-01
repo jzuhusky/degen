@@ -29,3 +29,4 @@ class TestBetModels(unittest.TestCase):
             wager_amt=Decimal(100), legs=[AmericanOdds(100), AmericanOdds(200), AmericanOdds(100)]
         )
         self.assertEqual(p.odds.value, Decimal(1100))
+        self.assertEqual(p.payoff, Decimal(1200))
