@@ -1,4 +1,5 @@
 from decimal import Decimal
+from functools import reduce
 from typing import List
 
 from degen.odds_models import Odds
@@ -32,9 +33,5 @@ class Bet(object):
 class Parlay(Bet):
     def __init__(self, wager_amt: Decimal, legs: List[Odds]):
         self.legs = legs
-        self.odds: Odds = legs[0]
-
-        for odds in legs[1:]:
-            self.odds &= odds
-
+        self.odds = reduce(lambda x, y: x & y, legs)
         super().__init__(wager_amt, self.odds)
