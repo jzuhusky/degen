@@ -23,3 +23,9 @@ class TestBetModels(unittest.TestCase):
         self.assertEqual(parlay.decimal_odds, DecimalOdds(4.0))
         self.assertEqual(parlay.implied_probability, ImpliedProbability(0.25))
         self.assertEqual(parlay.payoff, Decimal(400))
+
+    def test_parlay_2(self):
+        p = Parlay(
+            wager_amt=Decimal(100), legs=[AmericanOdds(100), AmericanOdds(200), AmericanOdds(100)]
+        )
+        self.assertEqual(p.odds.value, Decimal(1100))
