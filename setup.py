@@ -17,7 +17,7 @@ setup(
     author_email="jzuhusky@gmail.com",
     maintainer_email="jzuhusky@gmail.com",
     url="https://github.com/jzuhusky/degen",
-    install_requires=["pydantic>=1.9.1"],
+    install_requires=["pydantic>=1.10.6"],
     license="MIT",
     packages=["degen"],
 )
